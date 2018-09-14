@@ -1,0 +1,32 @@
+﻿@model Fiap06.Wbe.MVC.Models.Animal
+
+@{
+    ViewBag.Title = "Animal";
+}
+
+<h2>Animal</h2>
+
+<div class="form-control">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(animal => animal.Nome)
+            @Html.TextBoxFor(animal => animal.Nome, new { @class = "form-group" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(animal => animal.Raca)
+            @Html.TextBoxFor(animal => animal.Raca, new { @class = "form-group" })
+        </div>
+        <div class="form-group">
+            @Html.CheckBoxFor(animal => animal.Castrado, new { @class = "form-group" })
+            @Html.LabelFor(animal => animal.Castrado)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(animal => animal.Peso)
+            @Html.TextBoxFor(animal => animal.Peso, new { @class = "form-group" })
+        </div>
+        <div>
+            <input type="submit" value="SALVAR" class="btn btn-primary"/>
+        </div>
+    }
+</div>
