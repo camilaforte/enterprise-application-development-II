@@ -1,4 +1,4 @@
-﻿using _07.FIAP.WEB.MVC.persistencia;
+﻿using Fiap07.Web.MVC.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace _07.FIAP.WEB.MVC
+namespace Fiap07.Web.MVC
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -15,7 +15,8 @@ namespace _07.FIAP.WEB.MVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BrasfootContext>());
+            Database.SetInitializer(
+                new DropCreateDatabaseIfModelChanges<BrasfootContext>());
         }
     }
 }

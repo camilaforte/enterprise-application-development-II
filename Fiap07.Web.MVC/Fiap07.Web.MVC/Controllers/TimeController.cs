@@ -1,19 +1,18 @@
-﻿using _07.FIAP.WEB.MVC.Models;
-using _07.FIAP.WEB.MVC.persistencia;
+﻿using Fiap07.Web.MVC.Models;
+using Fiap07.Web.MVC.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace _07.FIAP.WEB.MVC.Controllers
+namespace Fiap07.Web.MVC.Controllers
 {
     public class TimeController : Controller
     {
-
         private BrasfootContext _context = new BrasfootContext();
 
-        // GET: Time
+        [HttpGet]
         public ActionResult Cadastrar()
         {
             return View();
@@ -22,15 +21,10 @@ namespace _07.FIAP.WEB.MVC.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Time time)
         {
-
             _context.Times.Add(time);
             _context.SaveChanges();
-
-            TempData["msgSucesso"] = "Time cadastrado com sucesso!";
-
+            TempData["msg"] = "Cadastrado!";
             return RedirectToAction("Cadastrar");
-
         }
-
     }
 }
